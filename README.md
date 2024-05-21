@@ -1,6 +1,6 @@
 Prerequisite:
 - Environment: Node 18, Npm 10.2.3
-- Registered account with brevo to send email alerts and api key
+- Registered account with [brevo](https://onboarding.brevo.com/account/register) to send email alerts and api key
 
 Steps:
 - clone repo
