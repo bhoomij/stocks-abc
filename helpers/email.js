@@ -26,7 +26,7 @@ async function sendEmail(alerts, symbol, fromEmail, toEmail, title) {
   }).join('');
 
   const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-  sendSmtpEmail.subject = `Stock ${title} Alert for ${symbol}`;
+  sendSmtpEmail.subject = `${title} Alert for ${symbol}`;
   sendSmtpEmail.htmlContent = `<html>
     <head>
       <style>
