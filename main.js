@@ -4,9 +4,7 @@ const {
 } = require('./helpers/stock');
 const emailService = require('./helpers/email');
 const { isRecentAlert } = require('./helpers/time');
-
-const fromEmail = process.env.EMAIL;
-const toEmail = process.env.TO_EMAIL;
+const { fromEmail, toEmail } = require('./helpers/config');
 
 function readSymbolsFromFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');

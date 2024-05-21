@@ -1,10 +1,11 @@
 const SibApiV3Sdk = require('sib-api-v3-sdk');
 const { isRecentAlert } = require('./time');
+const { apiKey: apiKeyVal } = require('./config');
 
 // Set Sendinblue API key
 const defaultClient = SibApiV3Sdk.ApiClient.instance;
 const apiKey = defaultClient.authentications['api-key'];
-apiKey.apiKey = process.env.API_KEY_BREVO; // Replace with your Sendinblue API key
+apiKey.apiKey = apiKeyVal; // Replace with your Sendinblue API key
 
 const RECENT_ALERT_COLOR = '#ccffcc'
 
@@ -26,7 +27,7 @@ async function sendEmail(alerts, symbol, fromEmail, toEmail, title) {
   }).join('');
 
   const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-  sendSmtpEmail.subject = `${title} Alert for ${symbol}`;
+sendSmtpEmail.subject = `${title} Alert for ${symbol}`;
   sendSmtpEmail.htmlContent = `<html>
     <head>
       <style>
